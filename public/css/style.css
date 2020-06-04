@@ -1,0 +1,25 @@
+html, body {
+  height: 100%;
+  position: relative; }
+
+.map #canvas {
+  height: 100%; }
+
+.map .sendlocation {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  z-index: 999;
+  background-color: #e7e7e7;
+  color: black;
+  border: none;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-family: monospace;
+  outline: none; }
+  .map .sendlocation.on {
+    background-color: #4CAF50;
+    color: #fff; }
