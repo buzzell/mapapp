@@ -1,6 +1,6 @@
 function init(){
 
-  var socket = io.connect("http://10.20.0.159:4000");
+  var socket = io.connect("https://stick-together.herokuapp.com/");
   socket.emit('subscribe', uuid);
   var map = L.map('canvas',{
     center: [0, 0],
