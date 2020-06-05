@@ -1,8 +1,11 @@
 var app = require('./app.js');
 var socket = require("socket.io");
-
-var server = app.listen(4000, function(){
-	console.log("Now listening to requests on port 4000");
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 8000;
+}
+var server = app.listen(port, function(){
+	console.log("Now listening to requests on port", port);
 });
 
 var io = socket(server);
