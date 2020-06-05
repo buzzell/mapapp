@@ -1,0 +1,23 @@
+body.index {
+  background-color: #262626;
+  display: flex;
+  font-family: monospace;
+  color: #ccc;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  .mapbtn {
+    background-color: #e7e7e7;
+    color: #000;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 6px;
+    font-size: 14px;
+    font-family: monospace;
+    color: #333;
+    text-decoration: none;
+    text-align: left;
+    outline: none;
+    cursor: pointer;
+  }
+}

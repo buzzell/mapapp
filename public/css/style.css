@@ -2,9 +2,45 @@ html, body {
   height: 100%;
   position: relative; }
 
+body.index {
+  background-color: #262626;
+  display: flex;
+  font-family: monospace;
+  color: #ccc;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+  body.index .mapbtn {
+    background-color: #e7e7e7;
+    color: #000;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 6px;
+    font-size: 14px;
+    font-family: monospace;
+    color: #333;
+    text-decoration: none;
+    text-align: left;
+    outline: none;
+    cursor: pointer; }
+
+.map .nosupport {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #262626;
+  z-index: 2000;
+  justify-content: center;
+  align-items: center;
+  color: #ccc;
+  font-family: monospace; }
+
 .map .chatbox {
   position: absolute;
-  top: 0;
+  top: -100%;
   left: 0;
   width: 100%;
   height: 100%;
@@ -15,7 +51,26 @@ html, body {
   display: flex;
   flex-direction: column; }
   .map .chatbox .chatlist {
-    flex: 1; }
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    font-family: monospace;
+    color: #ccc;
+    overflow-y: auto; }
+    .map .chatbox .chatlist .message {
+      padding: 8px;
+      max-width: 500px;
+      background-color: #222;
+      border-radius: 3px;
+      margin-bottom: 10px;
+      align-self: flex-start;
+      overflow-wrap: anywhere; }
+      .map .chatbox .chatlist .message:first-child {
+        margin-top: auto; }
+    .map .chatbox .chatlist .me {
+      align-self: flex-end;
+      background-color: #333;
+      max-width: initial; }
   .map .chatbox .messageinput {
     height: 75px;
     border: solid #333;
@@ -59,6 +114,8 @@ html, body {
   cursor: pointer;
   background-size: 18px;
   background-repeat: no-repeat; }
+  .map .mapbtn:hover {
+    opacity: 1; }
   .map .mapbtn.sendlocation {
     right: 5px;
     background-image: url("/img/location.png");
@@ -85,10 +142,20 @@ html, body {
     padding-left: 32px;
     background-image: url("/img/chat.png");
     background-position: 7px 6px; }
-  .map .mapbtn:hover {
-    opacity: 1; }
+    .map .mapbtn.chat.close {
+      background-image: url("/img/close.png");
+      background-position: 9px 7px;
+      background-size: 15px; }
 
 .map .leaflet-control {
   opacity: .5; }
   .map .leaflet-control:hover {
     opacity: 1; }
+
+body.error {
+  background-color: #262626;
+  display: flex;
+  font-family: monospace;
+  color: #ccc;
+  justify-content: center;
+  align-items: center; }

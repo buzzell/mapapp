@@ -8,41 +8,26 @@ var server = app.listen(4000, function(){
 var io = socket(server);
 
 io.on("connection", function(socket){
+
 	socket.on('subscribe', function(room) {
-	        console.log(socket.id,'joining room', room);
-	        socket.join(room);
+  	socket.join(room);
 	})
-
-
 
 	socket.on('stopLocationUpdate', room => {
-
 		socket.to(room).emit('stopLocationUpdate',  socket.id);
-
-
-
-
 	})
 
-
-
 	socket.on('locationUpdate', data => {
-		console.log(data)
 		socket.to(data.room).emit('locationUpdate', {
 			id: socket.id,
 			latLng: data.latLng
 		});
-
-
-
-
 	})
 
-
-
-
-
-
-
+	socket.on('chat', data => {
+		socket.to(data.room).emit('chat', {
+			message: data.message
+		});
+	})
 
 });
