@@ -1,18 +1,29 @@
 doctype html
 html(lang="en")
   head
-    title new
+    title Map: #{uuid}
     meta(charset='utf-8')
     meta(name='viewport' content='width=device-width, initial-scale=1')
     link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css')
     link(rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="")
     link(rel="stylesheet" href="/css/style.css")
   body.map
-    div#canvas
-    button.sendlocation Location off
+    .chatbox
+      .chatlist
+        .message tese ewerwerw werwerwer werqwerqwerqwe qwerqwerqwerqwerqwer qwerqwerqwerqwer qwerqwerqwerqwerq
+        .message tese ewerww werwerwer  qwerqwerrqwerqwer qwerqwerqqwer qwerqwerqwerqwerq
+        .message tese ewerww qwerqwwerqwer qwerqwerqqwer qwerqwerqwerqwerq
+      .messageinput
+        textarea(placeholder="Type your message...")
+      button.mapbtn.sendchat SEND
+    #canvas
+    button.mapbtn.sendlocation Location off
+    button.mapbtn.copylink(data-clipboard-text="http://localhost:4000/"+uuid) Copy link
+    button.mapbtn.chat Chat
     script.
       let uuid="#{uuid}";
     script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js')
     script(src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin="")
     script(src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js')
+    script(src='/js/clipboard.js')
     script(src='/js/map.js')

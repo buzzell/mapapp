@@ -27,7 +27,7 @@ io.on("connection", function(socket){
 
 
 	socket.on('locationUpdate', data => {
-
+		console.log(data)
 		socket.to(data.room).emit('locationUpdate', {
 			id: socket.id,
 			latLng: data.latLng
